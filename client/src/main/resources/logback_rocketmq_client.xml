@@ -37,19 +37,27 @@
         </encoder>
     </appender>
 
-    <logger name="RocketmqCommon" additivity="false">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyy-MM-dd HH\:mm\:ss,GMT+8} %p %t - %m%n</pattern>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <logger name="RocketmqCommon" additivity="true">
         <level value="${client.logLevel}"/>
         <appender-ref ref="RocketmqClientAppender"/>
     </logger>
 
 
-    <logger name="RocketmqRemoting" additivity="false">
+    <logger name="RocketmqRemoting" additivity="true">
         <level value="${client.logLevel}"/>
         <appender-ref ref="RocketmqClientAppender"/>
     </logger>
 
 
-    <logger name="RocketmqClient" additivity="false">
+    <logger name="RocketmqClient" additivity="true">
         <level value="${client.logLevel}"/>
         <appender-ref ref="RocketmqClientAppender"/>
     </logger>

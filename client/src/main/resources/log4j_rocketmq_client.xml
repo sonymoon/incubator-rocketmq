@@ -51,7 +51,8 @@
 
     <logger name="RocketmqRemoting" additivity="false">
         <level value="${client.logLevel}"/>
-        <appender-ref ref="RocketmqClientAppender"/>
+        <!--<appender-ref ref="RocketmqClientAppender"/>-->
+        <appender-ref ref="STDOUT"/>
     </logger>
 
 </log4j:configuration>
